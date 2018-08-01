@@ -143,8 +143,8 @@ while 1:
 #              print lightset              
               for i in range(16):
 #                    set=round(24+rd.uniform(-2,2),2)
-#                    set=round(24+np.sin(index/288.0*2*3.14*(rd.uniform(-0.5,0.5)+1))*1,2)
-                    set=round(24+np.sin(index/288.0*2*3.14)*1,2)
+                    set=round(24+np.sin(index/288.0*2*3.14*(rd.uniform(-0.5,0.5)+1))*1,2)
+#                    set=round(24+np.sin(index/288.0*2*3.14)*1,2)
                     mssg = mssg + ' ' + str(set)+ ' ' + str(set)
               mssg = mssg+ ' ' + str(0.3) + ' ' + str(0.3)+ ' ' +str(0.3)+ ' ' +str(0.3)+ ' ' +str(2500)+ ' ' +str(0)
 

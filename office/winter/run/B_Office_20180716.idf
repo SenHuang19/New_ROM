@@ -7672,7 +7672,7 @@ DesignSpecification:ZoneAirDistribution,
 
 Sizing:Parameters,
     1.5,                       !- Heating Sizing Factor
-    1.2;                       !- Cooling Sizing Factor
+    1.5;                       !- Cooling Sizing Factor
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SIZING:ZONE ===========
