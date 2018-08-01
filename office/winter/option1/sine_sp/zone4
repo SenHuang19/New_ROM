@@ -1,0 +1,41 @@
+{
+	"inputs" : {
+		"zones":{
+		"node1":"Core_mid ZN",
+		"node2":"Perimeter_mid_ZN_1 ZN",
+		"node3":"Perimeter_mid_ZN_2 ZN",
+		"node4":"Perimeter_mid_ZN_3 ZN",
+		"node5":"Perimeter_mid_ZN_4 ZN"		
+		},
+		"adjzones":{
+		"node1":"MidFloor_Plenum ZN"
+		},
+		"termoutlet":{
+		"node1":"Node 144",
+		"node2":"Node 112",
+		"node3":"Node 129",
+		"node4":"Node 134",
+		"node5":"Node 139"
+		},
+		"rhtoutlet":{
+		"node1":"Node 143",
+		"node2":"Node 123",
+		"node3":"Node 128",
+		"node4":"Node 133",
+		"node5":"Node 138"
+		},
+		"rhtinlet":{
+		"node1":"Node 142",
+		"node2":"Node 122",
+		"node3":"Node 126",
+		"node4":"Node 132",
+		"node5":"Node 137"
+		}		
+	},
+
+	"tout":"Environment:Site Outdoor Air Drybulb Temperature [C](TimeStep)",
+	"solar":{
+	"node1":"Environment:Site Diffuse Solar Radiation Rate per Area [W/m2](TimeStep)",
+	"node2":"Environment:Site Direct Solar Radiation Rate per Area [W/m2](TimeStep)"},
+	"hsp":"HTGSETP_SCH_YES_OPTIMUM:Schedule Value [](TimeStep)"
+}

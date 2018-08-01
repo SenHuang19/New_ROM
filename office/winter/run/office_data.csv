@@ -1,0 +1,41 @@
+component_name,outlet_node_name,inlet_node_name
+  ADU Basement ZN VAV Term,  Node 190
+  ADU Core_bottom ZN VAV Term,  Node 105
+  ADU Core_mid ZN VAV Term,  Node 144
+  ADU Core_top ZN VAV Term,  Node 183
+  ADU Perimeter_bot_ZN_1 ZN VAV Term,  Node 73
+  ADU Perimeter_bot_ZN_2 ZN VAV Term,  Node 90
+  ADU Perimeter_bot_ZN_3 ZN VAV Term,  Node 95
+  ADU Perimeter_bot_ZN_4 ZN VAV Term,  Node 100
+  ADU Perimeter_mid_ZN_1 ZN VAV Term,  Node 112
+  ADU Perimeter_mid_ZN_2 ZN VAV Term,  Node 129
+  ADU Perimeter_mid_ZN_3 ZN VAV Term,  Node 134
+  ADU Perimeter_mid_ZN_4 ZN VAV Term,  Node 139
+  ADU Perimeter_top_ZN_1 ZN VAV Term,  Node 151
+  ADU Perimeter_top_ZN_2 ZN VAV Term,  Node 168
+  ADU Perimeter_top_ZN_3 ZN VAV Term,  Node 173
+  ADU Perimeter_top_ZN_4 ZN VAV Term,  Node 178
+  Basement ZN Rht Coil,  Node 201,  Node 200
+  Core_bottom ZN Rht Coil,  Node 104,  Node 103
+  Core_mid ZN Rht Coil,  Node 143,  Node 142
+  Core_top ZN Rht Coil,  Node 182,  Node 181
+  Perimeter_bot_ZN_1 ZN Rht Coil,  Node 84,  Node 83
+  Perimeter_bot_ZN_2 ZN Rht Coil,  Node 89,  Node 87
+  Perimeter_bot_ZN_3 ZN Rht Coil,  Node 94,  Node 93
+  Perimeter_bot_ZN_4 ZN Rht Coil,  Node 99,  Node 98
+  Perimeter_mid_ZN_1 ZN Rht Coil,  Node 123,  Node 122
+  Perimeter_mid_ZN_2 ZN Rht Coil,  Node 128,  Node 126
+  Perimeter_mid_ZN_3 ZN Rht Coil,  Node 133,  Node 132
+  Perimeter_mid_ZN_4 ZN Rht Coil,  Node 138,  Node 137
+  Perimeter_top_ZN_1 ZN Rht Coil,  Node 162,  Node 161
+  Perimeter_top_ZN_2 ZN Rht Coil,  Node 167,  Node 165
+  Perimeter_top_ZN_3 ZN Rht Coil,  Node 172,  Node 171
+  Perimeter_top_ZN_4 ZN Rht Coil,  Node 177,  Node 176
+  CAV_bas Main Htg Coil,  Node 193,  Node 192
+  DataCenter_basement_ZN_6 ZN PSZ-AC Data Center Water Htg Coil,  Node 232,  Node 231
+  VAV_bot WITH REHEAT Main Htg Coil,  Node 76,  Node 75
+  VAV_mid WITH REHEAT Main Htg Coil,  Node 115,  Node 114
+  VAV_top WITH REHEAT Main Htg Coil,  Node 154,  Node 153
+  GroundFloor_Plenum ZN,  Node 88
+  MidFloor_Plenum ZN,  Node 127
+  TopFloor_Plenum ZN,  Node 166
