@@ -1,5 +1,7 @@
 import pandas as pd
 
+
+
 tab=pd.read_csv('weekdays/'+'raw_data.csv')
 
 names=list(tab.columns.values)
@@ -7,6 +9,8 @@ names=list(tab.columns.values)
 gp=tab.groupby('day')
 
 num= len(gp)
+
+
 
 i=1
 
@@ -17,7 +21,7 @@ for name,group in gp:
     if i==num-2:
         test=group
 
-    if i<num-1:
+    if i<num-2:
         train=train.merge(group,how='outer',on=names)
     if i>=num-2 and i<num-1:
         test=test.merge(group,how='outer',on=names)

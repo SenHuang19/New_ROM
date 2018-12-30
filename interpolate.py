@@ -6,12 +6,17 @@ from datetime import datetime
 from dateutil import tz
 import holidays
 import numpy as np
+import os
+if not os.path.exists('temp'):
+    os.makedirs('temp')
+
+source='source_data'
 
 us_holidays = holidays.UnitedStates()
 
 for var in vars:
        print var
-       tab=pd.read_csv(var+'.csv')
+       tab=pd.read_csv(source+'/'+var+'.csv')
        tab.columns = ['time',var]
        tab['timestamp']=tab['time'].apply(lambda x:time.mktime(datetime.strptime(x.split('.')[0], timestring).timetuple()))
        print tab['timestamp'].iloc[-1] 

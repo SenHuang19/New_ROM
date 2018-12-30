@@ -1,6 +1,13 @@
 import pandas as pd
+import os
 
-tab=pd.read_csv('raw_data.csv')
+if not os.path.exists('holidays'):
+    os.makedirs('holidays')
+
+if not os.path.exists('weekdays'):
+    os.makedirs('weekdays')
+
+tab=pd.read_csv('temp/raw_data.csv')
 
 names=list(tab.columns.values)
 

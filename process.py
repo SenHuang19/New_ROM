@@ -32,5 +32,5 @@ for var in vars:
        tab2['times']=tab2['times'].apply(lambda x:time.mktime(datetime.strptime(x.split('.')[0], timestring).timetuple()))
        tab=tab.merge(tab2,how='inner',on=['times'])
    i=i+1
-tab.to_csv('raw_data.csv',index=False)
+tab.to_csv('temp/raw_data.csv',index=False)
        
