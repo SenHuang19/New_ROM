@@ -12,17 +12,17 @@ xlab=[]
 
 for i in range(0,24,2):
 	 xtic.append(i*60/index)
-	 xlab.append(str(i+7)+':00')
+	 xlab.append(str(i)+':00')
 
 
 
 for i in range(0,24,2):
-	 xtic.append(i*60/index+1440/index)
+	 xtic.append(i*60/index)
 	 xlab.append(str(i)+':00')
 
 
 train=pd.read_csv('p_test/train'+str(index)+'.csv')
-dis_interval=1
+dis_interval=2
 train['tou_dis']=train['tout'].apply(lambda x: x // dis_interval)
 train['t_pre_dis']=train['t_pre'].apply(lambda x: x // dis_interval)
 
@@ -54,7 +54,7 @@ look_up_tab.to_csv('look_up_tab.csv',index=False)
 
 test=pd.read_csv('p_test/test'+str(index)+'.csv')
 
-test=test[60/index*7:60/index*18]
+#test=test[60/index*7:60/index*18]
 y_real=test['t']
 y_predict=[]
 t_value=test['t_pre'].iloc[0]

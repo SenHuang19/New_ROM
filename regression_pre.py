@@ -12,7 +12,8 @@ if not os.path.exists('p_test'):
 num=int(sys.argv[1])
 
 train=pd.read_csv('train_raw.csv')
-
+train=train.loc[train['day']!=13]
+train=train.loc[train['day']!=14]
 train=train.groupby(np.arange(len(train))//num).mean()
 
 gp=train.groupby('day')
@@ -26,6 +27,7 @@ for name,group in gp:
         t_pre=group['ZoneTemperature'][:-1].values
         weekday=group['weekday'][:-1].values
         hour=group['hour'][:-1].values
+        fanstatus=group['SupplyFanStatus'][:-1].values
     else:
         on=itertools.chain(on,group['CompressorCommand'][:-1].values)
         t=itertools.chain(t,group['ZoneTemperature'][1:].values)     
@@ -34,6 +36,7 @@ for name,group in gp:
         t_pre=itertools.chain(t_pre,group['ZoneTemperature'][:-1].values)
         weekday=itertools.chain(weekday,group['weekday'][:-1].values)
         hour=itertools.chain(hour,group['hour'][:-1].values)
+        fanstatus=itertools.chain(fanstatus,group['SupplyFanStatus'][:-1].values)
     i=i+1
 
 tab=pd.DataFrame()
@@ -43,6 +46,7 @@ tab['tout']=list(tout)
 tab['tdis']=list(tdis)
 tab['t_pre']=list(t_pre)
 tab['hour']=list(hour)
+tab['fanstatus']=list(fanstatus)
 tab['weekday']=list(weekday)
 p_out=pearsonr(tab['t'],tab['tout'])[0]
 p_hvac=pearsonr(tab['t'],tab['on'])[0]
@@ -68,18 +72,22 @@ for name,group in gp:
         on=group['CompressorCommand'][:-1].values
         t=group['ZoneTemperature'][1:].values     
         tout=group['OutdoorAirTemperature'][:-1].values
+        tdis=group['DischargeAirTemperature'][:-1].values
         t_pre=group['ZoneTemperature'][:-1].values
-        hour=group['hour'][:-1].values
         weekday=group['weekday'][:-1].values
-        times=group['times'][:-1].values
+        hour=group['hour'][:-1].values
+        times=group['times'][:-num].values
+        fanstatus=group['SupplyFanStatus'][:-1].values
     else:
         on=itertools.chain(on,group['CompressorCommand'][:-1].values)
         t=itertools.chain(t,group['ZoneTemperature'][1:].values)     
         tout=itertools.chain(tout,group['OutdoorAirTemperature'][:-1].values)
+        tdis=itertools.chain(tdis,group['DischargeAirTemperature'][:-1].values)
         t_pre=itertools.chain(t_pre,group['ZoneTemperature'][:-1].values)
-        hour=itertools.chain(hour,group['hour'][:-1].values)
         weekday=itertools.chain(weekday,group['weekday'][:-1].values)
-        times=itertools.chain(times,group['times'][:-1].values)
+        hour=itertools.chain(hour,group['hour'][:-1].values)
+        times=itertools.chain(times,group['times'][:-num].values)
+        fanstatus=itertools.chain(fanstatus,group['SupplyFanStatus'][:-1].values)
     i=i+1
 
 tab=pd.DataFrame()
@@ -87,9 +95,11 @@ tab['on']=list(on)
 tab['t']=list(t)
 tab['tout']=list(tout)
 tab['t_pre']=list(t_pre)
+tab['tdis']=list(tdis)
 tab['hour']=list(hour)
 tab['weekday']=list(weekday)
 tab['times']=list(times)
+tab['fanstatus']=list(fanstatus)
 p_out=pearsonr(tab['t'],tab['tout'])[0]
 p_hvac=pearsonr(tab['t'],tab['on'])[0]
 p_t=pearsonr(tab['t'],tab['t_pre'])[0]
